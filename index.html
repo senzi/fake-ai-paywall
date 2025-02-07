@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-text {
+            white-space: pre-wrap;
+            background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(0, 0, 0, 0.95) 20%,
+                rgba(0, 0, 0, 0.85) 40%,
+                rgba(0, 0, 0, 0.1) 70%,
+                rgba(0, 0, 0, 0) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .markdown-content p {
+            margin-bottom: 1em;
+            line-height: 1.5;
+        }
+        .markdown-content ul {
+            list-style-type: disc;
+            padding-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        .markdown-content li {
+            line-height: 1.5;
+        }
+        .markdown-content strong {
+            font-weight: 600;
+        }
+        .chat-bubble.bg-base-100 {
+            color: #1f2937;
+        }
+        .btn-vip {
+            background-color: #fc5531;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-vip:hover {
+            background-color: #e64a2b;
+        }
+        .vip-text {
+            color: #fc5531;
+        }
+        .vip-gradient {
+            background: linear-gradient(90deg, #fc5531, #f7761e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-base-200 min-h-screen">
+    <div class="max-w-3xl mx-auto p-4">
+        <!-- 头部 -->
+        <div class="navbar bg-base-100 rounded-box mb-4">
+            <div class="flex-1">
+                <div class="flex flex-col pl-2">
+                    <div class="text-xl font-bold">
+                        智脑 <span class="px-1.5 py-0.5 text-sm font-semibold bg-primary/10 text-primary rounded">Pro</span>
+                    </div>
+                    <span class="text-xs text-gray-500 font-medium mt-0.5">Cognitive Smart Dialogue Network</span>
+                </div>
+            </div>
+            <div class="flex-none">
+                <button class="btn btn-vip hover:opacity-90">升级VIP</button>
+            </div>
+        </div>
+
+        <!-- 对话区域 -->
+        <div class="space-y-4 mb-6">
+            <!-- 用户消息1 -->
+            <div class="chat chat-end">
+                <div class="chat-bubble bg-primary text-primary-content">
+                    为什么学习编程这么难？
+                </div>
+            </div>
+            
+            <!-- AI回复1 -->
+            <div class="chat chat-start">
+                <div class="chat-bubble bg-base-100">
+                    多练习就好了呗。
+                </div>
+            </div>
+
+            <!-- 用户消息2 -->
+            <div class="chat chat-end">
+                <div class="chat-bubble bg-primary text-primary-content">
+                    能具体说说吗？感觉自己完全没有头绪
+                </div>
+            </div>
+
+            <!-- AI回复2（带渐变消失效果） -->
+            <div class="chat chat-start">
+                <div class="chat-bubble bg-base-100 relative">
+                    <div class="fade-text markdown-content">学习编程确实充满挑战，但让我为你详细分析一下：
+
+<strong>编程思维的建立需要时间：</strong>
+• 它需要你从线性思维转向逻辑思维
+• 要学会把大问题拆分成小问题
+• 培养抽象思维和模式识别能力
+
+<strong>学习路径的选择也很重要：</strong>
+• 要从基础语法开始打好基础
+• 理解核心概念如变量、循环、函数等
+• 循序渐进地...</div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-base-100 p-2 text-center rounded-b-xl">
+                        <div class="vip-gradient font-bold text-lg">开通VIP解锁完整答案</div>
+                        <div class="text-xs text-gray-400 mt-1">低至0.5元/天</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 输入框 -->
+        <div class="bg-base-200">
+            <div class="flex gap-2">
+                <input type="text" placeholder="难题不过是我的开胃菜，来试试看？" class="input input-bordered w-full" />
+                <button class="btn btn-primary">发送</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
